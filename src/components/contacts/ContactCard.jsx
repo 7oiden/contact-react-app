@@ -15,7 +15,6 @@ function ContactCard(props) {
         <Button variant="primary">Edit</Button>
       </Card.Body>
     </Card>
-    <hr/>
     </>
     
     );

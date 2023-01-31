@@ -15,16 +15,40 @@ body {
 }
 
 .sticky-footer-wrapper {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 footer {
-    flex-shrink: 0;
-    background-color: pink;
+  flex-shrink: 0;
+  background-color: pink;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 #root {
-    height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.card-container {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem 0;
 }

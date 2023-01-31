@@ -1,7 +1,7 @@
 function PageFooter() {
     return (
         <footer>
-            <div>This is the footer</div>
+            <div className="footer-container container">This is the footer</div>
         </footer>
     )
 }

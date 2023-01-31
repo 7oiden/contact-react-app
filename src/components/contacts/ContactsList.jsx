@@ -3,6 +3,7 @@ import axios from "axios";
 import LoadSpinner from "../common/LoadSpinner";
 import AlertMsg from "../common/AlertMsg";
 import ContactCard from "./ContactCard";
+import AddContactModal from "../modals/AddContactModal";
 
 function ContactsList() {
     const [contact, setContact] = useState([]);
@@ -43,7 +44,8 @@ function ContactsList() {
     console.log(contact)
 
     return (
-        <div>
+        <>
+        <div className="card-container">
             {contact.map((item) => (
             <ContactCard 
                 key={item.id}
@@ -53,6 +55,8 @@ function ContactsList() {
                 />
         ))}
         </div>
+        <AddContactModal />
+        </>
     )
 }
 

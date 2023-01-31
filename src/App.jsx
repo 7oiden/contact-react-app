@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./sass/styles.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from 'react'

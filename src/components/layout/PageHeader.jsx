@@ -4,14 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 function PageHeader() {
   return (
     <header>
-    <Nav className="justify-content-center">
-      <Nav.Item>
+      <div className="container header-container">
         <NavLink to="/">Contacts</NavLink>
-      </Nav.Item>
-      <Nav.Item>
         <NavLink to="/about">About</NavLink>
-      </Nav.Item>
-    </Nav>
+    </div>
     </header>
   );
 }

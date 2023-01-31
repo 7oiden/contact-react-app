@@ -5,7 +5,7 @@ function HomePage() {
     return (
         <Layout>
         <div>
-             <h1>This is the home page</h1>
+             <h1>Contact list:</h1>
         </div>
         <div>
         <ContactsList />
