@@ -42,14 +42,23 @@ function ContactsList() {
       );
     }
 
-    console.log(contact)
+    // console.log(contact)
 
     return (
         <>
         <h2>Contact list:</h2>
         <SearchContactForm setQuery={setQuery} loading={loading}/>
         <div className="card-container">
-            {contact.map((item) => (
+            {contact.filter((item) => {
+              if (query === "") {
+                return item;
+              } else if (
+                item.attributes.last_name.toLowerCase().includes(query.toLowerCase()) ||
+                item.attributes.last_name.toLowerCase().startsWith(query.toLowerCase())
+              ) {
+                return item;
+              }
+            }).map((item) => (
             <ContactCard 
                 key={item.id}
                 id={item.id}
