@@ -14,7 +14,7 @@ function ContactCard(props) {
         <Card.Text>
           {email}
         </Card.Text>
-      <EditContactModal />
+      <EditContactModal id={id} />
         <DeleteContactBtn id={id} />
       </Card.Body>
     </Card>

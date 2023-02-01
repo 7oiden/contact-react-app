@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import EditContactForm from "../forms/EditContactForm";
 
-function EditContactModal () {
+function EditContactModal (props) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -22,7 +22,7 @@ function EditContactModal () {
           <Modal.Title className="modal-title">Edit contact</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <EditContactForm />
+          <EditContactForm id={props.id}/>
         </Modal.Body>
       </Modal>
     </>
