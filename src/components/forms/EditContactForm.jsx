@@ -43,15 +43,13 @@ const schema = yup.object().shape({
   });
 
 function EditContactForm(props) {
-    const {id, firstName, lastName, email} = props;
+    const {id, firstName, lastName, email, setShow} = props;
 
     const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  
-
-  console.log(id)
+  // console.log(id)
 
   const url = BASE_URL + "/" + id;
 
@@ -88,6 +86,9 @@ function EditContactForm(props) {
         setServerError(error.toString());
       } finally {
         setSubmitting(false);
+        setTimeout (() => {
+          setShow(false);
+        }, 2000)
       }
   }
 

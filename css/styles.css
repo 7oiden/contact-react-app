@@ -72,6 +72,16 @@ p {
 
 .form-control-lg {
   max-width: 400px;
+  margin-top: 1rem;
+}
+
+.btn-icon-box {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
 }
 
 header {

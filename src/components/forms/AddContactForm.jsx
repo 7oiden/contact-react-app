@@ -43,7 +43,7 @@ const schema = yup.object().shape({
     //   .max(400, "Message can't be more than 400 characters"),
   });
 
-function AddContactForm() {
+function AddContactForm({ handleAddContact, handleRerender }) {
     const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
@@ -84,6 +84,10 @@ const url = BASE_URL;
         setServerError(error.toString());
       } finally {
         setSubmitting(false);
+        setTimeout (() => {
+          handleAddContact();
+        }, 2000);
+        handleRerender();
       }
   }
 

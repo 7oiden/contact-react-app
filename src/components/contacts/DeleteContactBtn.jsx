@@ -3,15 +3,16 @@ import axios from "axios";
 import AlertMsg from "../common/AlertMsg";
 import { BASE_URL } from "../../constants/api";
 import Button from "react-bootstrap/Button";
+import { DeleteIcon } from "../icons/MaterialIcons";
 
-function DeleteContactBtn({ id }) {
+function DeleteContactBtn({ id, rerender, handleRerender }) {
 const [error, setError] = useState(null);
 
 // const url = "https://my-json-server.typicode.com/7oiden/my-json-server/contacts/" + id
 const url = BASE_URL + "/" + id;
 
 async function handleDelete() {
-    const confirmDelete = window.confirm("Delete this post?");
+    const confirmDelete = window.confirm("Are you sure you want to delete this contact?");
 
     if (confirmDelete) {
       try {
@@ -19,18 +20,20 @@ async function handleDelete() {
         console.log(url)
       } catch (error) {
         setError(error);
+      } finally {
+        handleRerender();
       }
     }
   }
 
   if (error) {
     return (
-      <AlertMsg variant="danger" message="The item could not be deleted" />
+      <AlertMsg variant="danger" message="The contact could not be deleted, please try again later" />
     );
   }
 
  return (
-    <Button onClick={handleDelete} variant="danger">Delete item</Button>
+    <button onClick={handleDelete} className="btn-icon-box"><DeleteIcon color="#000000" size="2rem" /></button>
  )   
 }
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import EditContactForm from "../forms/EditContactForm";
+import { EditIcon } from "../icons/MaterialIcons";
 
 function EditContactModal (props) {
     const {id, firstName, lastName, email} = props;
@@ -13,7 +14,7 @@ function EditContactModal (props) {
 
     return (
     <>
-      <Button onClick={handleShow}>Edit contact</Button>
+      <button onClick={handleShow} className="btn-icon-box"><EditIcon color="#000000" size="2rem" /></button>
       <Modal
         show={show}
         onHide={handleClose}
@@ -28,7 +29,8 @@ function EditContactModal (props) {
           id={id}
           firstName={firstName}
           lastName={lastName}
-          email={email}/>
+          email={email}
+          setShow={setShow}/>
         </Modal.Body>
       </Modal>
     </>
