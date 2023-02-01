@@ -10,13 +10,14 @@ function ContactsList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const url = "https://my-json-server.typicode.com/7oiden/my-json-server/contacts";
+    // const url = "https://my-json-server.typicode.com/7oiden/my-json-server/contacts";
+    const url = "https://obscure-reaches-62581.herokuapp.com/api/contacts";
 
     useEffect(function () {
         async function getContact() {
         try {
             const response = await axios.get(url);
-            setContact(response.data);
+            setContact(response.data.data);
             // console.log(response.data)
         } catch (error) {
             console.log(error)
@@ -29,8 +30,6 @@ function ContactsList() {
     }, []);
 
     if (loading) return <LoadSpinner />;
-
-    
 
     if (error) {
       return (
@@ -50,8 +49,9 @@ function ContactsList() {
             <ContactCard 
                 key={item.id}
                 id={item.id}
-                name={item.name}
-                body={item.body}
+                firstName={item.attributes.first_name}
+                lastName={item.attributes.last_name}
+                email={item.attributes.email}
                 />
         ))}
         </div>

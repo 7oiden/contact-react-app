@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import AddContactForm from "../forms/AddContactForm";
 
 function AddContactModal () {
     const [show, setShow] = useState(false);
@@ -21,7 +22,7 @@ function AddContactModal () {
           <Modal.Title className="modal-title">Add a contact</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div>This is the modal body</div>
+          <AddContactForm />
         </Modal.Body>
       </Modal>
     </>
