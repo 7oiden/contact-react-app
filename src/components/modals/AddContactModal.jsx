@@ -11,7 +11,7 @@ function AddContactModal () {
 
     return (
     <>
-      <Button onClick={handleShow}>Add contact</Button>
+      <Button onClick={handleShow} className="add-contact-btn">Add contact</Button>
       <Modal
         show={show}
         onHide={handleClose}

@@ -11,19 +11,6 @@ import Button from "react-bootstrap/Button";
 import FormError from "./FormError";
 import { BASE_URL } from "../../constants/api";
 
-// const schema = yup.object().shape({
-//     first_name: yup
-//     .string()
-//     .required("Please enter your name")
-//     .min(3, "Your first name must be at least 3 characters")
-//     .max(6, "First name can't be more than 12 characters"),
-
-//     body: yup
-//     .string()
-//     .required("Please enter a msg")
-//     .min(8, "Your first name must be at least 3 characters")
-//     .max(12, "First name can't be more than 12 characters"),
-// })
 
 const schema = yup.object().shape({
     first_name: yup

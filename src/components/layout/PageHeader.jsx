@@ -4,10 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 function PageHeader() {
   return (
     <header>
-      <div className="container header-container">
-        <NavLink to="/">Contacts</NavLink>
-        <NavLink to="/about">About</NavLink>
-    </div>
+        <Nav className="container header-container">
+        <NavLink to="/" className={({ isActive }) => isActive ? "navbar__link navbar__link--active" : "navbar__link"}>Contacts</NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? "navbar__link navbar__link--active" : "navbar__link"}>About</NavLink>
+        </Nav>
     </header>
   );
 }

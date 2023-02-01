@@ -6,7 +6,7 @@ function Layout({ children }) {
         <>
         <div className="sticky-footer-wrapper">
         <HeaderNav />
-        <main>
+        <main className="container">
             {children}
         </main>
         </div>

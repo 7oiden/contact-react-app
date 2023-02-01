@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import AlertMsg from "../common/AlertMsg";
 import { BASE_URL } from "../../constants/api";
+import Button from "react-bootstrap/Button";
 
 function DeleteContactBtn({ id }) {
 const [error, setError] = useState(null);
@@ -29,7 +30,7 @@ async function handleDelete() {
   }
 
  return (
-    <button onClick={handleDelete}>Delete item</button>
+    <Button onClick={handleDelete} variant="danger">Delete item</Button>
  )   
 }
 

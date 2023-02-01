@@ -3,13 +3,14 @@ import axios from "axios";
 import LoadSpinner from "../common/LoadSpinner";
 import AlertMsg from "../common/AlertMsg";
 import ContactCard from "./ContactCard";
-import AddContactModal from "../modals/AddContactModal";
 import { BASE_URL } from "../../constants/api";
+import SearchContactForm from "../forms/SearchContactForm";
 
 function ContactsList() {
     const [contact, setContact] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [query, setQuery] = useState("");
 
     // const url = "https://my-json-server.typicode.com/7oiden/my-json-server/contacts";
     const url = BASE_URL;
@@ -45,6 +46,8 @@ function ContactsList() {
 
     return (
         <>
+        <h2>Contact list:</h2>
+        <SearchContactForm setQuery={setQuery} loading={loading}/>
         <div className="card-container">
             {contact.map((item) => (
             <ContactCard 
@@ -56,7 +59,6 @@ function ContactsList() {
                 />
         ))}
         </div>
-        <AddContactModal />
         </>
     )
 }
