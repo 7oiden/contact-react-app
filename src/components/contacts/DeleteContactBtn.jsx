@@ -1,12 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
 import AlertMsg from "../common/AlertMsg";
+import { BASE_URL } from "../../constants/api";
 
 function DeleteContactBtn({ id }) {
 const [error, setError] = useState(null);
 
 // const url = "https://my-json-server.typicode.com/7oiden/my-json-server/contacts/" + id
-const url = "https://obscure-reaches-62581.herokuapp.com/api/contacts/" + id;
+const url = BASE_URL + "/" + id;
 
 async function handleDelete() {
     const confirmDelete = window.confirm("Delete this post?");

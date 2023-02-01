@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import DeleteContactBtn from './DeleteContactBtn';
+import EditContactModal from '../modals/EditContactModal';
 
 function ContactCard(props) {
     const {id, firstName, lastName, email} = props;
@@ -9,12 +10,11 @@ function ContactCard(props) {
         <>
     <Card style={{ width: '18rem' }}>
       <Card.Body>
-        <Card.Title>{firstName}</Card.Title>
+        <Card.Title>{firstName} {lastName}</Card.Title>
         <Card.Text>
           {email}
-          <p>{id}</p>
         </Card.Text>
-        <Button variant="primary">Edit</Button>
+      <EditContactModal />
         <DeleteContactBtn id={id} />
       </Card.Body>
     </Card>

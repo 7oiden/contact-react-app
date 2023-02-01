@@ -4,6 +4,7 @@ import LoadSpinner from "../common/LoadSpinner";
 import AlertMsg from "../common/AlertMsg";
 import ContactCard from "./ContactCard";
 import AddContactModal from "../modals/AddContactModal";
+import { BASE_URL } from "../../constants/api";
 
 function ContactsList() {
     const [contact, setContact] = useState([]);
@@ -11,7 +12,7 @@ function ContactsList() {
     const [error, setError] = useState(null);
 
     // const url = "https://my-json-server.typicode.com/7oiden/my-json-server/contacts";
-    const url = "https://obscure-reaches-62581.herokuapp.com/api/contacts";
+    const url = BASE_URL;
 
     useEffect(function () {
         async function getContact() {
