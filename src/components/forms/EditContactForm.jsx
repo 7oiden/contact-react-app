@@ -12,25 +12,40 @@ import FormError from "./FormError";
 import { BASE_URL } from "../../constants/api";
 
 function EditContactForm(props) {
+    const {id, firstName, lastName, email} = props;
+
     const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  const id = props.id
+  
 
-  console.log(props.id)
+  console.log(id)
 
   const url = BASE_URL + "/" + id;
 
     return (
+        <>
         <Form>
             <fieldset disabled={submitting}>
             <Form.Group className="mb-3" controlId="formBasicFirstname">
             <Form.Label>First name</Form.Label>
-            <Form.Control />
+            <Form.Control defaultValue={firstName}/>
           </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicLastname">
+            <Form.Label>Last name</Form.Label>
+            <Form.Control defaultValue={lastName}/>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control defaultValue={email}/>
+          </Form.Group>
+          <Button className="form-button" type="submit">
+            Update contact
+          </Button>
             </fieldset>
         </Form>
+        </>
     )
 }
 

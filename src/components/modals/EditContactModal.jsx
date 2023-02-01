@@ -4,6 +4,8 @@ import Modal from "react-bootstrap/Modal";
 import EditContactForm from "../forms/EditContactForm";
 
 function EditContactModal (props) {
+    const {id, firstName, lastName, email} = props;
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -19,10 +21,14 @@ function EditContactModal (props) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title className="modal-title">Edit contact</Modal.Title>
+          <Modal.Title className="modal-title">{firstName} {lastName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <EditContactForm id={props.id}/>
+          <EditContactForm 
+          id={id}
+          firstName={firstName}
+          lastName={lastName}
+          email={email}/>
         </Modal.Body>
       </Modal>
     </>
