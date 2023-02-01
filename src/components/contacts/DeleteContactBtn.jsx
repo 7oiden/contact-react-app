@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import AlertMsg from "../common/AlertMsg";
 import { BASE_URL } from "../../constants/api";
-import Button from "react-bootstrap/Button";
 import { DeleteIcon } from "../icons/MaterialIcons";
 
 function DeleteContactBtn({ id, rerender, handleRerender }) {
@@ -33,7 +32,7 @@ async function handleDelete() {
   }
 
  return (
-    <button onClick={handleDelete} className="btn-icon-box"><DeleteIcon color="#000000" size="2rem" /></button>
+    <button onClick={handleDelete} className="btn-icon-box btn-icon-delete"><DeleteIcon color="#000000" size="1.5rem" /></button>
  )   
 }
 

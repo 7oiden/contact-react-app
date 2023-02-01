@@ -64,22 +64,84 @@ p {
   z-index: 100;
 }
 
+.card {
+  border: none;
+  border-radius: 5px;
+}
+
 .card-body {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: getColor(darkGray);
+  color: white;
+  border-radius: 5px;
+}
+
+.card-title {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #ffffff40;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-control-lg {
-  max-width: 400px;
   margin-top: 1rem;
 }
 
 .btn-icon-box {
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   border: none;
   border-radius: 50%;
   top: 0;
   right: 0;
+  background-color: getColor(yellow);
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
 }
+
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.form-button {
+  margin: 1rem 0;
+}
+
+.btn-primary {
+  background-color: getColor(teal);
+  border: none;
+
+  &:hover {
+    background-color: getColor(teal);
+    opacity: 0.75;
+  }
+
+  &:focus {
+    background-color: getColor(teal);
+    opacity: 0.75;
+  }
+}
+
+// .btn-icon-delete {
+//   position: absolute;
+//   top: 1rem;
+//   right: 1rem;
+// }
+
+

@@ -7,14 +7,14 @@ export function DeleteIcon({ color, size }) {
     );
   }
 
-  export function EditIcon({ color, size }) {
+  export function NoteIcon({ color, size }) {
     return (
-      <Icon path={mdiNoteEdit} className="delete-icon" color={color} size={size} />
+      <Icon path={mdiNoteEdit} className="note-icon" color={color} size={size} />
     );
   }
 
   export function SearchIcon({ color, size }) {
     return (
-      <Icon path={mdiMagnify} className="delete-icon" color={color} size={size} />
+      <Icon path={mdiMagnify} className="search-icon" color={color} size={size} />
     );
   }

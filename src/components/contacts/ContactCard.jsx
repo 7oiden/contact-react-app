@@ -15,17 +15,17 @@ function ContactCard(props) {
           {email}
         </Card.Text>
       <NotesModal />
-      <EditContactModal 
-        id={id}
-        firstName={firstName}
-          lastName={lastName}
-          email={email} />
         <DeleteContactBtn 
           id={id}
           firstName={firstName}
           lastName={lastName}
           email={email}
           handleRerender={handleRerender} />     
+          <EditContactModal 
+        id={id}
+        firstName={firstName}
+          lastName={lastName}
+          email={email} />
       </Card.Body>
     </Card>
     </>

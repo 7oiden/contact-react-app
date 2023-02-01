@@ -1,5 +1,5 @@
 header {
-  background-color: beige;
+  background-color: getColor(navyBlue);
   padding: 1rem 0;
 }
 
@@ -10,10 +10,16 @@ header {
 }
 
 .navbar__link {
-  color: black;
+  color: white;
   text-decoration: none;
+  font-size: 1.125rem;
+
+  &:hover {
+    color: getColor(yellow);
+  }
 }
 
 .navbar__link--active {
-  border-bottom: 1px solid black;
+  color: getColor(yellow);
+  border-bottom: 1px solid getColor(yellow);
 }
