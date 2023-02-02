@@ -3,17 +3,19 @@ import Modal from "react-bootstrap/Modal";
 import { NoteIcon } from "../icons/MaterialIcons";
 import Button from "react-bootstrap/Button";
 
-function EditContactModal (props) {
-    const {id, firstName, lastName, email} = props;
+function EditContactModal(props) {
+  const { id, firstName, lastName, email } = props;
 
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    return (
+  return (
     <>
-      <button onClick={handleShow} className="btn-icon-box"><NoteIcon color="#000000" size="1.5rem" /></button>
+      <button onClick={handleShow} className="btn-icon-box">
+        <NoteIcon color="#000000" size="1.5rem" />
+      </button>
       <Modal
         show={show}
         onHide={handleClose}
@@ -30,7 +32,7 @@ function EditContactModal (props) {
         </Modal.Body>
       </Modal>
     </>
-    )
+  );
 }
 
 export default EditContactModal;
