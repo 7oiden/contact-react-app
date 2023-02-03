@@ -24,7 +24,7 @@ function ContactsList() {
           const response = await axios.get(url);
           setContact(response.data.data);
 
-          // console.log(response.data)
+          console.log(response.data);
         } catch (error) {
           console.log(error);
         } finally {
@@ -74,7 +74,12 @@ function ContactsList() {
         {filteredContacts.map(
           ({
             id,
-            attributes: { first_name, last_name, email, phone_number },
+            attributes: {
+              first_name,
+              last_name,
+              email,
+              phone_number,
+            },
           }) => (
             <ContactCard
               key={id}

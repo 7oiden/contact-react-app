@@ -2,9 +2,24 @@ import Card from "react-bootstrap/Card";
 import DeleteContactBtn from "./DeleteContactBtn";
 import EditContactModal from "../modals/EditContactModal";
 import NotesModal from "../modals/NotesModal";
+import { StarFilledIcon, StarOutlinedIcon } from "../icons/MaterialIcons";
+import { useState } from "react";
 
 function ContactCard(props) {
-  const { id, firstName, lastName, email, handleRerender, phoneNumber } = props;
+  const {
+    id,
+    firstName,
+    lastName,
+    email,
+    handleRerender,
+    phoneNumber,
+  } = props;
+
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  function toggleFavorite() {
+      setIsFavorite(!isFavorite);
+    }
 
   return (
     <>
@@ -19,6 +34,9 @@ function ContactCard(props) {
           <Card.Text>
             <span>{phoneNumber}</span>
           </Card.Text>
+          <div onClick={toggleFavorite} className="star-container">
+            {isFavorite ? <StarFilledIcon size="1.75rem"/> : <StarOutlinedIcon size="1.75rem" />} 
+          </div>
           <NotesModal />
           <DeleteContactBtn
             id={id}

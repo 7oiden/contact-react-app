@@ -1,5 +1,11 @@
 import Icon from "@mdi/react";
-import { mdiTrashCan, mdiNoteEdit, mdiMagnify } from '@mdi/js';
+import {
+  mdiTrashCan,
+  mdiNoteEdit,
+  mdiMagnify,
+  mdiStar,
+  mdiStarOutline,
+} from "@mdi/js";
 
 export function DeleteIcon({ color, size }) {
     return (
@@ -18,3 +24,25 @@ export function DeleteIcon({ color, size }) {
       <Icon path={mdiMagnify} className="search-icon" color={color} size={size} />
     );
   }
+
+   export function StarFilledIcon({ color, size }) {
+     return (
+       <Icon
+         path={mdiStar}
+         className="star-icon"
+         color={color}
+         size={size}
+       />
+     );
+   }
+
+    export function StarOutlinedIcon({ color, size }) {
+      return (
+        <Icon
+          path={mdiStarOutline}
+          className="star-icon"
+          color={color}
+          size={size}
+        />
+      );
+    }

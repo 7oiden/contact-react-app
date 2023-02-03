@@ -30,18 +30,6 @@ const schema = yup.object().shape({
     .email("Please enter a valid email address"),
 
   phone_number: yup.string().required("Please enter a phone number"),
-
-  // subject: yup
-  //   .string()
-  //   .required("Please enter a subject")
-  //   .min(4, "Subject must be at least 4 characters")
-  //   .max(20, "Subject can't be more than 20 characters"),
-
-  // message: yup
-  //   .string()
-  //   .required("Please enter your message")
-  //   .min(10, "Your message must be at least 10 characters")
-  //   .max(400, "Message can't be more than 400 characters"),
 });
 
 function EditContactForm(props) {
