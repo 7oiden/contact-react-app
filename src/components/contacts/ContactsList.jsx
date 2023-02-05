@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import _, { orderBy, filter } from "lodash";
+import _, { orderBy, filter, map, mapKeys } from "lodash";
 import axios from "axios";
 import LoadSpinner from "../common/LoadSpinner";
 import AlertMsg from "../common/AlertMsg";
@@ -79,6 +79,7 @@ function ContactsList() {
               last_name,
               email,
               phone_number,
+              favorite,
             },
           }) => (
             <ContactCard
@@ -88,7 +89,9 @@ function ContactsList() {
               lastName={last_name}
               email={email}
               phoneNumber={phone_number}
+              favorite={favorite}
               handleRerender={handleRerender}
+              filteredContacts={filteredContacts}
             />
           )
         )}
